@@ -9,20 +9,7 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/gorilla/handlers"
-	"database/sql"
-	_ "github.com/go-sql-driver/mysql"
 )
-
-
-
-
-/**
-* Global Variables
-*/
-var db *sql.DB 
-var err error
-var mySigningSecretKey = []byte("qwerty123")
-
 
 /**
  * [Goriila mux router]
@@ -33,7 +20,7 @@ func main() {
 
 	str := rtr.PathPrefix("/api").Subrouter()
 	str.HandleFunc("/", aricto.HandleIndex)
-	str.HandleFunc("/login", aricto.PostLogin).Methods("GET")
+	str.HandleFunc("/login", aricto.PostLogin).Methods("POST")
 
 	//user subroute api
 	usr_str := str.PathPrefix("/user").Subrouter()
@@ -42,6 +29,12 @@ func main() {
 	//issue subroute api
 	isu_str := str.PathPrefix("/issues").Subrouter()
 	isu_str.Handle("/all-issues-list", middleware.JwtMiddleware(aricto.GetAllIssuesList)).Methods("GET")
+	isu_str.Handle("/issue-info", middleware.JwtMiddleware(aricto.GetIssueInfo)).Methods("GET")
+	isu_str.Handle("/create-issue", middleware.JwtMiddleware(aricto.CreateIssue)).Methods("POST")
+	isu_str.Handle("/update-issue", middleware.JwtMiddleware(aricto.UpdateIssue)).Methods("PUT")
+	isu_str.Handle("/delete-issue", middleware.JwtMiddleware(aricto.DeleteIssue)).Methods("DELETE")
+	isu_str.Handle("/issues-by-me", middleware.JwtMiddleware(aricto.GetAllIssuesByMe)).Methods("GET")
+	isu_str.Handle("/issues-for-me", middleware.JwtMiddleware(aricto.GetAllIssuesAssignedToMe)).Methods("GET")
 
 	http.Handle("/", rtr)
 

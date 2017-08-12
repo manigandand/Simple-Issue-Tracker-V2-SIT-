@@ -6,6 +6,8 @@ import (
 	"net/http"
 	"time"
 	sitDatatype "aricto/datatypes"
+
+	"github.com/gorilla/context"
 	"github.com/dgrijalva/jwt-go"	
 )
 
@@ -28,6 +30,13 @@ func JwtMiddleware(next http.Handler) http.Handler {
 		fmt.Println(token)
 		if claims, ok := token.Claims.(jwt.MapClaims); ok && token.Valid {
 		    fmt.Println(claims["id"], claims["email"], claims["user_name"], claims["first_name"], claims["last_name"], claims["exp"])
+		    
+		    context.Set(r, "user_id", claims["id"])
+		    context.Set(r, "user_email", claims["email"])
+		    context.Set(r, "user_name", claims["user_name"])
+		    context.Set(r, "user_fName", claims["first_name"])
+		    context.Set(r, "user_lName", claims["last_name"])
+
 		    next.ServeHTTP(w, r)
 		} else {
 		    fmt.Println(err)

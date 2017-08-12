@@ -17,10 +17,19 @@ type IssuesTable struct {
 	Id  		int    `json:"id"`
 	Title 		string `json:"title"`
 	Description string `json:"description"`
-	AssignedTo 	string `json:"assigned_to"`
-	CreatedBy 	string `json:"created_by"`
+	AssignedTo 	int    `json:"assigned_to"`
+	CreatedBy 	int    `json:"created_by"`
 	Status 		string `json:"status"`
 
+}
+
+type CreateIssueType struct {
+	Id  		int
+	Title 		string
+	Description string
+	AssignedTo 	int
+	CreatedBy 	int
+	Status 		string
 }
 
 type ErrorType struct {
