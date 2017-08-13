@@ -5,13 +5,13 @@
 	c. Replace your db connection address here.<br /><br />	
 
 2. Run the DB Migration at first instant<br />
-	a. Nacicate to `mani@Mani:~/Simple-Issue-Tracker-V2-SIT-/src$` project directory.<br />
+	a. Navigate to `mani@Mani:~/Simple-Issue-Tracker-V2-SIT-/src$` project directory.<br />
 	b. Run `go run aricto/migration/run_migration.go`<br />
 	c. Now the Database and `user`, `issues` tables created with some user and issue seed data.
 	d. There is no API to create user, please use the seed user data. You can find all the user list from here `http://localhost:3011/api/user/all-user-list`
 
 3. Run the code.<br />
-	a. Nacicate to `mani@Mani:~/Simple-Issue-Tracker-V2-SIT-/src$` project directory.<br />
+	a. Navigate to `mani@Mani:~/Simple-Issue-Tracker-V2-SIT-/src$` project directory.<br />
 	b. Run `go run aricto/main.go`<br />
 	b. Now the server started to serve in `http://localhost:3011/api/`<br /><br />
 
