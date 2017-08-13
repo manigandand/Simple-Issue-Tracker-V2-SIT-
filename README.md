@@ -16,21 +16,21 @@
 
 4. Available API to test.<br />
 	```shell
-	# a. The following API's no need of any authendication/access token<br />
-		1. http://localhost:3011/api/<br />
-		2. http://localhost:3011/api/user/all-user-list<br />
-		3. http://localhost:3011/api/login<br />
+	# The following API's no need of any authendication/access token
+		1. http://localhost:3011/api/
+		2. http://localhost:3011/api/user/all-user-list
+		3. http://localhost:3011/api/login
 		<br />
-	# b. After login access token will be provided for the user, need to send access token along with the request<br />
-		1. http://localhost:3011/api/issues/all-issues-list<br />
-		2. http://localhost:3011/api/issues/issue-info?issue_id=1<br />
-		3. http://localhost:3011/api/issues/create-issue<br />
-		4. http://localhost:3011/api/issues/update-issue<br />
-		5. http://localhost:3011/api/issues/delete-issue?issue_id=6<br />
-		6. http://localhost:3011/api/issues/issues-by-me<br />
+	# After login access token will be provided for the user, need to send access token along with the request.
+		1. http://localhost:3011/api/issues/all-issues-list
+		2. http://localhost:3011/api/issues/issue-info?issue_id=1
+		3. http://localhost:3011/api/issues/create-issue
+		4. http://localhost:3011/api/issues/update-issue
+		5. http://localhost:3011/api/issues/delete-issue?issue_id=6
+		6. http://localhost:3011/api/issues/issues-by-me
 		7. http://localhost:3011/api/issues/issues-for-me
 	```	
-		<br /><br />
+		
 
 5. Need more info on the API, please refer the following Postman Document.<br />
 	Note: Limited lifetime to this document.<br />
