@@ -1,12 +1,12 @@
 # Steps to run this repo
 1. DB and Tables<br />
 	a. Have not created any migrations to create table and database, did manually in my local.<br />
-	b. Database Name: aricto<br />
- 	c. Tables: user, issues<br /><br />
+	b. Database Name: `aricto`<br />
+ 	c. Tables: `user`, `issues`<br /><br />
 
 2. DB Connection<br />
 	a. Give the proper db connection address in dbconnection.go file.<br />
-	b. sql.Open("mysql", "homestead:secret@tcp([192.168.11.11]:3306)/aricto")<br />
+	b. `sql.Open("mysql", "homestead:secret@tcp([192.168.11.11]:3306)/aricto")`<br />
 	c. Replace your db connection address here.<br /><br />
 
 3. Run the code.<br />
@@ -16,17 +16,17 @@
 
 4. Available API to test.<br />
 	a. The following API's no need of any authendication/access token<br />
-		1. http://localhost:3011/api/<br />
+	```	1. http://localhost:3011/api/<br />
 		2. http://localhost:3011/api/user/all-user-list<br />
-		3. http://localhost:3011/api/login<br />
+		3. http://localhost:3011/api/login<br />```
 	b. After login access token will be provided for the user, need to send access token along with the request<br />
-		1. http://localhost:3011/api/issues/all-issues-list<br />
+	```	1. http://localhost:3011/api/issues/all-issues-list<br />
 		2. http://localhost:3011/api/issues/issue-info?issue_id=1<br />
 		3. http://localhost:3011/api/issues/create-issue<br />
 		4. http://localhost:3011/api/issues/update-issue<br />
 		5. http://localhost:3011/api/issues/delete-issue?issue_id=6<br />
 		6. http://localhost:3011/api/issues/issues-by-me<br />
-		7. http://localhost:3011/api/issues/issues-for-me<br /><br />
+		7. http://localhost:3011/api/issues/issues-for-me<br /><br />```
 
 5. Need more info on the API, please refer the following Postman Document.<br />
 	Note: Limited lifetime to this document.<br />
