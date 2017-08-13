@@ -19,6 +19,7 @@
 	```	1. http://localhost:3011/api/<br />
 		2. http://localhost:3011/api/user/all-user-list<br />
 		3. http://localhost:3011/api/login<br />```
+		<br />
 	b. After login access token will be provided for the user, need to send access token along with the request<br />
 	```	1. http://localhost:3011/api/issues/all-issues-list<br />
 		2. http://localhost:3011/api/issues/issue-info?issue_id=1<br />
@@ -26,7 +27,7 @@
 		4. http://localhost:3011/api/issues/update-issue<br />
 		5. http://localhost:3011/api/issues/delete-issue?issue_id=6<br />
 		6. http://localhost:3011/api/issues/issues-by-me<br />
-		7. http://localhost:3011/api/issues/issues-for-me<br /><br />```
+		7. http://localhost:3011/api/issues/issues-for-me```<br /><br />
 
 5. Need more info on the API, please refer the following Postman Document.<br />
 	Note: Limited lifetime to this document.<br />
@@ -46,7 +47,7 @@ Please reach me out for more clarification @ manigandan.jeff@gmail.com, 95786287
 Design:
 System will have two models called User and Issue. With following information
 
-#1. User
+#1. User <br />
 
 a. Email
 b. Username
