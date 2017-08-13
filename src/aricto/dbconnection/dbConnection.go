@@ -42,23 +42,19 @@ func DbConnection(w http.ResponseWriter) (*sql.DB, error){
 */
 func CheckError(err error, w http.ResponseWriter) {
 	fmt.Println(err)
-	result, err1 := json.Marshal(map[string]interface{}{
-					"forcePageRefresh" : 0,
-					"message" : "Something went wrong.",
-					"status" : false,
-					"data" : "",
-					"error" : &sitDatatype.ErrorType{
-					    		Exists : true,
-					    		Errors : err.Error(),
-						    },
-					"statusCode" : 500,
-					"time" : struct{UnixTime int32}{int32(time.Now().Unix())},
-					})
-
-	if err1 != nil {
-    	fmt.Println("Error Marshaling to JSON", err1)
-    	CheckError(err1,w)
-    }
+	result, _ := json.Marshal(map[string]interface{}{
+		"forcePageRefresh" : 0,
+		"message" : "Something went wrong.",
+		"status" : false,
+		"data" : "",
+		"error" : &sitDatatype.ErrorType{
+		    		Exists : true,
+		    		Errors : err.Error(),
+			    },
+		"statusCode" : 500,
+		"time" : struct{UnixTime int32}{int32(time.Now().Unix())},
+	})
+	
     w.Header().Set("Content-Type", "application/json")
     w.Write([]byte(result))
 }

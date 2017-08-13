@@ -1,13 +1,14 @@
 # Steps to run this repo
-1. DB and Tables<br />
-	a. Have not created any migrations to create table and database, did manually in my local.<br />
-	b. Database Name: `aricto`<br />
- 	c. Tables: `user`, `issues`<br /><br />
-
-2. DB Connection<br />
+1. Setup DB address<br />
 	a. Give the proper db connection address in dbconnection.go file.<br />
-	b. `sql.Open("mysql", "homestead:secret@tcp([192.168.11.11]:3306)/aricto")`<br />
-	c. Replace your db connection address here.<br /><br />
+	b. `sql.Open("mysql", "homestead:secret@tcp([192.168.11.11]:3306)/")`<br />
+	c. Replace your db connection address here.<br /><br />	
+
+2. Run the DB Migration at first instant<br />
+	a. Nacicate to `mani@Mani:~/Simple-Issue-Tracker-V2-SIT-/src$` project directory.<br />
+	b. Run `go run aricto/migration/run_migration.go`<br />
+	c. Now the Database and `user`, `issues` tables created with some user and issue seed data.
+	d. There is no API to create user, please use the seed user data. You can find all the user list from here `http://localhost:3011/api/user/all-user-list`
 
 3. Run the code.<br />
 	a. Nacicate to `mani@Mani:~/Simple-Issue-Tracker-V2-SIT-/src$` project directory.<br />
